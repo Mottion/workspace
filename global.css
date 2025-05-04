@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: red;
+}
+
+.select2-dropdown {
+  @apply rounded-b-lg shadow-md;
+}
