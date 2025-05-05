@@ -1,7 +1,9 @@
+import { Router } from "./router"
+
 function App() {
   return (
     <>
-      <h1 className="text-primary">text</h1>      
+      <Router />
     </>
   )
 }

@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@reference "@global.css";
+
+.screen {
+  @apply h-screen w-screen bg-black flex flex-row
+}
+
+.side_menu { 
+  @apply w-[250px] h-screen bg-side-menu border-r-line border-r-2
+}
+
+.outlat_wrapper {
+  @apply p-4 flex-1
+}

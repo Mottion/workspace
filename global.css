@@ -1,9 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: red;
+  --color-primary: #2E184C;
+  --color-white: #E0E0E1;
+  --color-side-menu: #121518;
+  --color-hover: #1D2025;
+  --color-line: #202429;
 }
 
-.select2-dropdown {
-  @apply rounded-b-lg shadow-md;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--color-white);
+  font-family: "Archivo";
 }
