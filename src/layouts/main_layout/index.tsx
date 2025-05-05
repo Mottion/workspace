@@ -1,7 +1,8 @@
-import { MainLayoutProps, MenusProps } from "./interfaces";
-import Box from '@mui/material/Box';
 import "./styles.css"
-import { SimpleTreeView, SimpleTreeViewProps, SimpleTreeViewRoot, TreeItem } from "@mui/x-tree-view";
+
+import { Outlet } from "react-router";
+import { MainLayoutProps, MenusProps } from "./interfaces";
+import { SimpleTreeView, TreeItem } from "@mui/x-tree-view";
 import { useState } from "react";
 
 const menus: MenusProps[] = [
@@ -33,8 +34,10 @@ export const MainLayout: React.FC<MainLayoutProps> = () => {
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
 
   const handleItemExpansionToggle = (_: React.SyntheticEvent | null,itemId: string) => {
-    if(expandedItems.includes(itemId)) setExpandedItems([])
-    else setExpandedItems([itemId]);
+    if(expandedItems.includes(itemId)) 
+      setExpandedItems([])
+    else 
+      setExpandedItems([itemId]);
   };
 
   return (
@@ -60,7 +63,7 @@ export const MainLayout: React.FC<MainLayoutProps> = () => {
         </SimpleTreeView>
       </div>
       <div className="outlat_wrapper">
-        <h2 className="outlat_title">Financeiro</h2>
+        <Outlet />
       </div>
     </div>
   )

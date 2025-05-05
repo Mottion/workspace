@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@reference "@global.css";
+
+.container_wrapper {
+  @apply flex flex-col gap-3 h-full w-full
+}
+
+.content_wrapper {
+  @apply w-full h-full bg-side-menu rounded-xl
+}
