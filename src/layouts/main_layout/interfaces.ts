@@ -6,5 +6,6 @@ export interface MenusProps {
   label: string,
   subMenus: {
     label: string,
+    link?: string,
   }[]
 }

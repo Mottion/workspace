@@ -1,6 +1,6 @@
 import "./styles.css"
 
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router";
 import { MainLayoutProps, MenusProps } from "./interfaces";
 import { SimpleTreeView, TreeItem } from "@mui/x-tree-view";
 import { useState } from "react";
@@ -9,8 +9,8 @@ const menus: MenusProps[] = [
   {
     label: "Financeiro", 
     subMenus: [
-      {label: "Dashboard"},
-      {label: "Cadastro de valores"},
+      {label: "Dashboard", link: "financial/dashboard"},
+      {label: "Cadastro de valores", link: "financial/register_of_values"},
       {label: "@mui/x-data-grid-premium"},
     ]
   },
@@ -56,7 +56,9 @@ export const MainLayout: React.FC<MainLayoutProps> = () => {
           {menus.map((menu, menuIndex) => (
             <TreeItem key={menuIndex} itemId={menu.label} label={menu.label}>
               {menu.subMenus.map(((subMenu, subMenuIndex) => (
-                <TreeItem key={subMenuIndex}  itemId={subMenu.label} label={subMenu.label} />
+                <Link to={subMenu.link || ""}>
+                  <TreeItem key={subMenuIndex}  itemId={subMenu.label} label={subMenu.label} />
+                </Link>
               )))}
             </TreeItem>
           ))}
